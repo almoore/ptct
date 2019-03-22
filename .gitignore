@@ -92,7 +92,7 @@ ENV/
 .spyderproject
 .spyproject
 
-# pychar project settings
+# pycharm project settings
 .idea
 
 # Rope project settings

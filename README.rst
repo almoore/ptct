@@ -26,7 +26,15 @@ Python program to convert temperature between Kelvin, Celsius, Fahrenheit, and R
 Features
 --------
 
-* TODO
+Takes the following inputs:
+
+- an input temperature
+- an input unit of measure
+- a target unit of measure
+- an optional numeric response
+
+  - The student’s response must match an authoritative answer after both the student’s response and authoritative answer are rounded to the ones place. The system indicates that the response is correct, incorrect, or invalid.
+
 
 Credits
 -------

@@ -11,9 +11,9 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = open('requirements.txt').readlines()
+requirements = open('requirements/base.txt').readlines()
 
-setup_requirements = [ ]
+setup_requirements = ['pytest-runner', "setuptools>=21.0.0" ]
 
 test_requirements = open('requirements/dev.txt').readlines()
 

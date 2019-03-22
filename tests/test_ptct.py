@@ -3,9 +3,8 @@
 
 """Tests for `ptct` package."""
 
-
+import pytest
 import unittest
-from click.testing import CliRunner
 
 from ptct import ptct
 from ptct import cli
