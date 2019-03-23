@@ -62,3 +62,14 @@ def convert(value, unit, target):
     except ValueError:
         logger.error("Could not convert the value {} {}".format(value, unit))
         return None
+
+
+def check(result, response):
+    try:
+        if result is None:
+            return "invalid"
+        elif response is not None:
+            return "correct" if int(response) == int(result) else "incorrect"
+        return result
+    except ValueError:
+        return "incorrect"

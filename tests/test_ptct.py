@@ -7,7 +7,6 @@ import pytest
 import unittest
 
 from ptct import ptct
-from ptct import cli
 
 
 @pytest.fixture
@@ -27,4 +26,3 @@ class TestPtct(unittest.TestCase):
     def test_f_to_r(self):
         """Test something."""
         assert int(ptct.convert(84.2, 'F', 'R')) == int(543.5)
-
