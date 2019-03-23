@@ -16,19 +16,10 @@ RUN export PIP_DOWNLOAD_CACHE=/src/.pip_download_cache && \
     python setup.py test
 
 ## run tests on every Python version with tox
-FROM python:3-alpine as tox
+FROM alexgmoore/python:3-alpine-tox as tox
 WORKDIR /src
-COPY --from=linting /src .
-
-RUN addgroup -S -g 1000 dummy && \
-    adduser -S -u 1000 -G dummy dummy
-
-RUN apk add --no-cache python git \
-    build-base python3-dev python-dev
-
-RUN export PIP_DOWNLOAD_CACHE=/src/.pip_download_cache && \
-    pip install tox
-
+# COPY --from=linting /src .
+COPY . /src
 RUN tox
 
 ## check code coverage quickly with the default Python
