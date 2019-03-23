@@ -10,6 +10,11 @@ from ptct import ptct
 from ptct import cli
 
 
+@pytest.fixture
+def error_fixture():
+    assert 0
+
+
 class TestPtct(unittest.TestCase):
     """Tests for `ptct` package."""
 
@@ -19,15 +24,7 @@ class TestPtct(unittest.TestCase):
     def tearDown(self):
         """Tear down test fixtures, if any."""
 
-    def test_000_something(self):
+    def test_f_to_r(self):
         """Test something."""
+        assert int(ptct.convert(84.2, 'F', 'R')) == int(543.5)
 
-    def test_command_line_interface(self):
-        """Test the CLI."""
-        runner = CliRunner()
-        result = runner.invoke(cli.main)
-        assert result.exit_code == 0
-        assert 'ptct.cli.main' in result.output
-        help_result = runner.invoke(cli.main, ['--help'])
-        assert help_result.exit_code == 0
-        assert '--help  Show this message and exit.' in help_result.output

@@ -5,6 +5,13 @@
 import logging
 logger = logging.getLogger(__name__)
 
+name_map = {
+    "Rankine": "R",
+    "Kelvin": "K",
+    "Fahrenheit": "F",
+    "Celsius": "C"
+}
+
 
 def to_kelvin(value, unit):
     kmap = {
@@ -32,6 +39,11 @@ def to_rankine(value, unit):
 
 
 def convert(value, unit, target):
+    # Convert to short name
+    if target in name_map.keys():
+        target = name_map[target]
+    if unit in name_map.keys():
+        unit = name_map[unit]
     if unit not in ['K', 'C', 'F', 'R']:
         logger.error("{} is not a supported unit type".format(unit))
         return

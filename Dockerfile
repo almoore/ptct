@@ -3,7 +3,7 @@ FROM python:alpine3.9 as builder
 COPY . /app
 WORKDIR /app
 RUN ./clean.sh
-RUN python setup.py install
+RUN pip install .
 
 ## check style with flake8
 FROM python:alpine3.9 as linting
