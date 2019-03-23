@@ -11,11 +11,22 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = open('requirements/base.txt').readlines()
+requirements = []
 
-setup_requirements = ['pytest-runner', "setuptools>=21.0.0" ]
+setup_requirements = ['pytest-runner', "setuptools>=21.0.0"]
 
-test_requirements = open('requirements/dev.txt').readlines()
+test_requirements = [
+  "pip>=18.1",
+  "bumpversion==0.5.3",
+  "wheel>=0.32.1",
+  "watchdog==0.9.0",
+  "flake8==3.5.0",
+  "tox==3.5.2",
+  "Sphinx==1.8.1",
+  "twine==1.12.1",
+  "coverage==4.5.1",
+  "pytest"
+]
 
 setup(
     name='ptct',
