@@ -23,19 +23,61 @@ Python program to convert temperature between Kelvin, Celsius, Fahrenheit, and R
 * Documentation: https://ptct.readthedocs.io.
 
 
+Intallation
+-----------
+
+.. code-block:: console
+
+    $ pip install ptct
+
+
 Features
 --------
 
 Takes the following inputs:
 
-- an input temperature
-- an input unit of measure
-- a target unit of measure
-- an optional numeric response
+  - An input temperature
+  - An input unit of measure
+  - A target unit of measure
+  - An optional numeric response
 
-  - The student’s response must match an authoritative answer after both the student’s response and authoritative answer are rounded to the ones place. The system indicates that the response is correct, incorrect, or invalid.
+The student’s response must match an authoritative answer after both the student’s response and authoritative answer are rounded to the ones place. The system indicates that the response is correct, incorrect, or invalid. 
+
+When given no response it will retrun the conversion result.
+
+Basic Usage
+-----------
+
+.. code-block:: console
+
+   usage: ptct [-h] [-r RESPONSE] [-v] [-d] input units target
+
+   positional arguments:
+     input                 The value to convert
+     units                 The input units <K/R/F/C> long names also supported
+     target                The targeted units <K/R/F/C> long names also supported
+
+   optional arguments:
+     -h, --help            show this help message and exit
+     -r RESPONSE, --response RESPONSE
+                           The student response to check
+     -v, --verbose         Verbose logging
+     -d, --debug           Debug logging
 
 
+Examples
+--------
+
+.. code-block:: console
+
+   $ ptct 23 F C
+   -5.0
+   $ ptct 20 F C --response -6
+   correct
+   $ ptct 40 C F --response 100
+   incorrect
+
+    
 Credits
 -------
 

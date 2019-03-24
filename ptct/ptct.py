@@ -14,6 +14,11 @@ name_map = {
 
 
 def to_kelvin(value, unit):
+    """
+    :param value: magnitude in float or int format
+    :param unit: units of the input one of C, F, R, or K
+    :return: a float value in Kelvin converted from the input unit
+    """
     kmap = {
         'C': (lambda c: c + 273.15),
         'F': (lambda f: (f + 459.67) / 1.8),
@@ -24,21 +29,42 @@ def to_kelvin(value, unit):
 
 
 def to_celsius(value, unit):
+    """
+    :param value: magnitude in float or int format
+    :param unit: units of the input one of C, F, R, or K
+    :return: a float value in Celsius converted from the input unit
+    """
     k = to_kelvin(value, unit)
     return k - 273.15
 
 
 def to_fahrenheit(value, unit):
+    """
+    :param value: magnitude in float or int format
+    :param unit: units of the input one of C, F, R, or K
+    :return: a float value in Fahrenheit converted from the input unit
+    """
     k = to_kelvin(value, unit)
     return k * 1.8 - 459.67
 
 
 def to_rankine(value, unit):
+    """
+    :param value: magnitude in float or int format
+    :param unit: units of the input one of C, F, R, or K
+    :return: a float value in Rankine converted from the input unit
+    """
     k = to_kelvin(value, unit)
     return k * 1.8
 
 
 def convert(value, unit, target):
+    """
+    :param value: magnitude in float or int format
+    :param unit: units of the input one of C, F, R, or K
+    :param target: units to convert to one of C, F, R, or K
+    :return: a float value in the targeted units
+    """
     # Convert to short name
     if target in name_map.keys():
         target = name_map[target]
@@ -65,6 +91,11 @@ def convert(value, unit, target):
 
 
 def check(result, response):
+    """
+    Returns a string of correct, incorrect, or invalid
+    after comparing the conversion result and response of
+    the student rounded to the ones place.
+    """
     try:
         if result is None:
             return "invalid"
