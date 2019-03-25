@@ -31,6 +31,16 @@ Intallation
     $ pip install ptct
 
 
+Docker Options
+--------------
+
+Rather than installing the tool it can be run from a docker image.
+
+.. code-block:: console
+
+    $ docker run --rm alexgmoore/ptct 20 F K
+
+
 Features
 --------
 
@@ -77,7 +87,7 @@ Examples
    $ ptct 40 C F --response 100
    incorrect
 
-    
+
 Credits
 -------
 
