@@ -6,7 +6,7 @@
 import pytest
 import unittest
 
-from ptct import ptct
+import ptct
 
 
 @pytest.fixture

@@ -31,7 +31,7 @@ test_requirements = [
 setup(
     name='ptct',
     url='https://github.com/almoore/ptct',
-    version='0.1.0',
+    version='0.1.1',
     author="Alex Moore",
     author_email='alexander.g.moore1@gmail.com',
     description="Python program to convert temperature between Kelvin, Celsius, Fahrenheit",
