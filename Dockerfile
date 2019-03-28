@@ -3,7 +3,6 @@ COPY . /src
 WORKDIR /src
 ## check style with flake8
 RUN ./clean.sh && \
-    
     python -m pip install -r requirements/dev.txt && \
     flake8 ptct tests
 
